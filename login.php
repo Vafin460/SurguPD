@@ -5,16 +5,20 @@
 
       <h1 class="mb-5">Авторизация</h1>
 
-        <?php flash() ?>
-
+      <?php flash(); ?>
+      
+      
       <form method="post" action="do_login.php">
         <div class="mb-3">
           <label for="username" class="form-label">Имя пользователя</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+
+          <input type="text" class="form-control" id="username" name="username" 
+            value="<?= $_COOKIE['old_username'] ?? '' ?>" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Пароль</label>
-          <input type="password" class="form-control" id="password" name="password" required>
+          <input type="password" class="form-control" id="password" name="password" 
+          value="<?= $_COOKIE['old_password'] ?? '' ?>" required>
         </div>
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary">Авторизация</button>
@@ -27,5 +31,6 @@
 </div>
 
 </body>
+
 </html>
 <?php require 'footer.php'; ?>

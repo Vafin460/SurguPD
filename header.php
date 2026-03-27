@@ -47,3 +47,4 @@ if (check_auth()) {
         </div>
     </nav>
     <div class="py-5 container">
+        <?php flash(); ?>
